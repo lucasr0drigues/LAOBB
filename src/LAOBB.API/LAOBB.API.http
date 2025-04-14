@@ -1,0 +1,6 @@
+@LAOBB.API_HostAddress = http://localhost:5287
+
+GET {{LAOBB.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
