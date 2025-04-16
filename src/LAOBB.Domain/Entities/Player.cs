@@ -27,6 +27,8 @@ namespace LAOBB.Domain.Entities
         public double? FameRatio { get; private set; }
         public DateTime? Timestamp { get; private set; }
 
+        protected Player() { }
+
         public Player(
             string name,
             string sbiId,

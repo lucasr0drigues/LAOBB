@@ -15,7 +15,7 @@ namespace LAOBB.Domain.Entities
         public string? Timeout { get; private set; }
         public int? TotalFame { get; private set; }
         public int? TotalKills { get; private set; }
-        public object ClusterName { get; private set; }
+        public string ClusterName { get; private set; }
         public int? BattleTimeout { get; private set; }
 
         public virtual IReadOnlyCollection<PlayerBattle> PlayerBattles => _playerBattles;
@@ -27,6 +27,8 @@ namespace LAOBB.Domain.Entities
         public virtual IReadOnlyCollection<AllianceBattle> AllianceBattles => _allianceBattles;
         private List<AllianceBattle> _allianceBattles = new();
 
+        protected Battle() { }
+
         public Battle(
             int? sbiId,
             string? startTime,
@@ -34,7 +36,7 @@ namespace LAOBB.Domain.Entities
             string? timeout,
             int? totalFame,
             int? totalKills,
-            object clusterName,
+            string clusterName,
             int? battleTimeout)
         {
             SbiId = sbiId;

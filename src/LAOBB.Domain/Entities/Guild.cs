@@ -27,6 +27,8 @@ namespace LAOBB.Domain.Entities
         public int? AttacksWon { get; private set; }
         public int? DefensesWon { get; private set; }
 
+        protected Guild() { }
+
         // will receive the infos about the founder as it is because the character might not exist anymore
         public Guild(
             string sbiId,

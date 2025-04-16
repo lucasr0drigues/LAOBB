@@ -19,6 +19,8 @@ namespace LAOBB.Domain.Entities
         public int? Deaths { get; private set; }
         public int? KillFame { get; private set; }
 
+        protected AllianceBattle() { }
+
         public AllianceBattle(
             Battle battle,
             Alliance alliance,

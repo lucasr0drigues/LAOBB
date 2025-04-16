@@ -23,6 +23,8 @@ namespace LAOBB.Domain.Entities
         public string? SbiAllianceId { get; private set; }
         public Alliance? Alliance { get; private set; }
 
+        protected GuildBattle() { }
+
         public GuildBattle(
             Guild guild,
             int? kills,

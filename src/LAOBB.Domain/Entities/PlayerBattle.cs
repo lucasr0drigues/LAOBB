@@ -27,6 +27,8 @@ namespace LAOBB.Domain.Entities
         public string? SbiAllianceId { get; private set; }
         public Alliance? Alliance { get; private set; }
 
+        protected PlayerBattle() { }
+
         public PlayerBattle(
             Player player,
             int? kills,

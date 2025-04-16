@@ -16,8 +16,6 @@ namespace LAOBB.Infrastructure.EntityConfiguration
             builder.HasKey(b => b.Id);
 
             builder.HasIndex(b => b.SbiId).IsUnique(false);
-
-            builder.Property(b => b.ClusterName).HasConversion<string?>();
         }
     }
 }

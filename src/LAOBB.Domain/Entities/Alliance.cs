@@ -12,7 +12,7 @@ namespace LAOBB.Domain.Entities
         public string SbiAllianceId { get; private set; }
         public string AllianceName { get; private set; }
         public string AllianceTag { get; private set; }
-        public string? FounderId { get; private set; }
+        public Guid? FounderId { get; private set; }
         public string? SbiFounderId { get; private set; }
         public string? FounderName { get; private set; }
         public Player? Founder { get; private set; }
@@ -21,13 +21,12 @@ namespace LAOBB.Domain.Entities
         private List<Guild> _allianceGuilds = new();
         public int? NumPlayers { get; private set; }
 
+        protected Alliance() { }
+
         public Alliance(
             string sbiAllianceId,
             string allianceName,
             string allianceTag,
-            string? founderId,
-            string? sbiFounderId,
-            string? founderName,
             Player? founder,
             DateTime? founded,
             int? numPlayers)
@@ -35,9 +34,9 @@ namespace LAOBB.Domain.Entities
             SbiAllianceId = sbiAllianceId;
             AllianceName = allianceName;
             AllianceTag = allianceTag;
-            FounderId = founderId;
-            SbiFounderId = sbiFounderId;
-            FounderName = founderName;
+            FounderId = founder?.Id;
+            SbiFounderId = founder?.SbiId;
+            FounderName = founder?.Name;
             Founder = founder;
             Founded = founded;
             NumPlayers = numPlayers;
